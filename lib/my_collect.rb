@@ -1,9 +1,9 @@
-def my_select(collection)
- i = 0
- selected_items = []
- while i < collection.size
-   selected_items << yield(collection[i] == true)
-   i += 1
- end
- selected_items
+def my_collect(collection)
+  i = 0
+  new_collection = []
+  while i < collection.size
+    new_collection << yield(collection[i])
+    i += 1
+  end
+  new_collection
 end
